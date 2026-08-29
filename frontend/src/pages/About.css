@@ -1,0 +1,430 @@
+/* =========================
+   ABOUT PAGE
+========================= */
+
+.about-page {
+  width: 100%;
+  color: #111;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.about-hero {
+  padding: 100px 20px;
+
+  background: #f7f7f7;
+
+  text-align: center;
+}
+
+.about-hero-content {
+  max-width: 800px;
+  margin: auto;
+}
+
+.about-hero-content > span,
+.about-text > span,
+.mission-heading > span {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.about-hero h1 {
+  margin: 20px 0;
+
+  font-size: 58px;
+  line-height: 1.1;
+  letter-spacing: -2px;
+}
+
+.about-hero p {
+  max-width: 650px;
+  margin: auto;
+
+  color: #666;
+
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+
+/* =========================
+   ABOUT CONTENT
+========================= */
+
+.about-content {
+  width: 90%;
+  max-width: 1200px;
+
+  margin: auto;
+  padding: 100px 0;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+  gap: 80px;
+}
+
+
+/* Dashboard Card */
+
+.about-image {
+  padding: 30px;
+
+  background: #f3f3f3;
+
+  border-radius: 15px;
+}
+
+.about-image-card {
+  padding: 25px;
+
+  background: white;
+
+  border: 1px solid #ddd;
+  border-radius: 12px;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.about-card-header {
+  display: flex;
+  justify-content: space-between;
+
+  padding-bottom: 20px;
+
+  color: #777;
+
+  font-size: 13px;
+
+  border-bottom: 1px solid #eee;
+}
+
+.about-number {
+  padding: 25px 0;
+}
+
+.about-number span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #777;
+
+  font-size: 13px;
+}
+
+.about-number strong {
+  font-size: 38px;
+}
+
+
+/* Bars */
+
+.about-bars {
+  height: 180px;
+
+  display: flex;
+  align-items: end;
+  justify-content: space-around;
+
+  gap: 15px;
+
+  border-bottom: 1px solid #ddd;
+}
+
+.about-bar {
+  width: 14%;
+
+  background: #222;
+
+  border-radius: 6px 6px 0 0;
+}
+
+.about-bar-1 {
+  height: 45%;
+}
+
+.about-bar-2 {
+  height: 65%;
+}
+
+.about-bar-3 {
+  height: 55%;
+}
+
+.about-bar-4 {
+  height: 85%;
+}
+
+.about-bar-5 {
+  height: 70%;
+}
+
+
+/* About Text */
+
+.about-text h2 {
+  margin: 18px 0;
+
+  font-size: 42px;
+  line-height: 1.15;
+}
+
+.about-text p {
+  margin-bottom: 18px;
+
+  color: #666;
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.about-button {
+  display: inline-block;
+
+  margin-top: 15px;
+  padding: 13px 22px;
+
+  background: #111;
+  color: white;
+
+  border-radius: 7px;
+
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.about-button:hover {
+  background: #333;
+}
+
+
+/* =========================
+   MISSION
+========================= */
+
+.mission-section {
+  padding: 100px 20px;
+
+  background: #f7f7f7;
+}
+
+.mission-heading {
+  max-width: 700px;
+
+  margin: 0 auto 55px;
+
+  text-align: center;
+}
+
+.mission-heading h2 {
+  margin: 15px 0;
+
+  font-size: 40px;
+}
+
+.mission-heading p {
+  color: #666;
+
+  line-height: 1.6;
+}
+
+
+/* Mission Cards */
+
+.mission-grid {
+  width: 90%;
+  max-width: 1100px;
+
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+.mission-card {
+  padding: 30px;
+
+  background: white;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+
+  transition: 0.25s;
+}
+
+.mission-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.mission-icon {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 20px;
+
+  background: #f1f1f1;
+
+  border-radius: 10px;
+
+  font-size: 22px;
+}
+
+.mission-card h3 {
+  margin: 0 0 12px;
+
+  font-size: 19px;
+}
+
+.mission-card p {
+  margin: 0;
+
+  color: #666;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.about-cta {
+  width: 90%;
+  max-width: 1200px;
+
+  margin: 80px auto;
+
+  padding: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  background: #111;
+  color: white;
+
+  border-radius: 15px;
+}
+
+.about-cta h2 {
+  margin: 0 0 10px;
+
+  font-size: 30px;
+}
+
+.about-cta p {
+  margin: 0;
+
+  color: #aaa;
+}
+
+.about-cta a {
+  padding: 14px 22px;
+
+  background: white;
+  color: #111;
+
+  border-radius: 7px;
+
+  text-decoration: none;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.about-cta a:hover {
+  background: #ddd;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+
+  .about-hero {
+    padding: 70px 20px;
+  }
+
+  .about-hero h1 {
+    font-size: 45px;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+
+    padding: 70px 0;
+  }
+
+  .about-text h2 {
+    font-size: 36px;
+  }
+
+  .mission-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .about-hero h1 {
+    font-size: 36px;
+  }
+
+  .about-hero p {
+    font-size: 15px;
+  }
+
+  .about-content {
+    width: 94%;
+  }
+
+  .about-image {
+    padding: 15px;
+  }
+
+  .about-text h2 {
+    font-size: 31px;
+  }
+
+  .mission-section {
+    padding: 70px 15px;
+  }
+
+  .mission-heading h2 {
+    font-size: 32px;
+  }
+
+  .about-cta {
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 35px;
+
+    margin: 50px auto;
+  }
+
+}

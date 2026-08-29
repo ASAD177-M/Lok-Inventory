@@ -1,0 +1,313 @@
+/* =========================
+   ADD PRODUCT PAGE
+========================= */
+
+.add-product-page {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+
+  padding: 70px 20px;
+
+  background: #f7f7f7;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.add-product-container {
+  width: 90%;
+  max-width: 800px;
+
+  margin: auto;
+
+  padding: 45px;
+
+  background: #fff;
+
+  border: 1px solid #e2e2e2;
+  border-radius: 14px;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.06);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.add-product-header {
+  margin-bottom: 35px;
+}
+
+.add-product-header span {
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.add-product-header h1 {
+  margin: 12px 0 8px;
+
+  font-size: 40px;
+
+  line-height: 1.1;
+}
+
+.add-product-header p {
+  margin: 0;
+
+  color: #666;
+
+  font-size: 15px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.add-product-form {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 22px;
+}
+
+
+/* =========================
+   FORM GROUP
+========================= */
+
+.form-group {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+
+  padding: 13px 14px;
+
+  border: 1px solid #dcdcdc;
+
+  border-radius: 7px;
+
+  outline: none;
+
+  background: #fff;
+
+  color: #111;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  box-sizing: border-box;
+
+  transition: 0.2s;
+}
+
+.form-group input,
+.form-group select {
+  height: 48px;
+}
+
+.form-group textarea {
+  min-height: 130px;
+
+  resize: vertical;
+}
+
+
+/* Focus */
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #111;
+
+  box-shadow:
+    0 0 0 3px rgba(0, 0, 0, 0.06);
+}
+
+
+/* Placeholder */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #aaa;
+}
+
+
+/* Description full width */
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.form-actions {
+  grid-column: 1 / -1;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  margin-top: 8px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid #eee;
+}
+
+
+/* Cancel */
+
+.cancel-btn {
+  height: 46px;
+
+  padding: 0 22px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 7px;
+
+  background: #fff;
+
+  color: #333;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.cancel-btn:hover {
+  background: #f5f5f5;
+}
+
+
+/* Save */
+
+.save-product-btn {
+  height: 46px;
+
+  padding: 0 22px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #111;
+
+  color: #fff;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.save-product-btn:hover {
+  background: #333;
+}
+
+.save-product-btn:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 650px) {
+
+  .add-product-page {
+    padding: 40px 0;
+  }
+
+  .add-product-container {
+    width: 94%;
+
+    padding: 30px 20px;
+  }
+
+  .add-product-header h1 {
+    font-size: 32px;
+  }
+
+  .add-product-form {
+    grid-template-columns: 1fr;
+  }
+
+  .full-width {
+    grid-column: auto;
+  }
+
+  .form-actions {
+    grid-column: auto;
+
+    flex-direction: column-reverse;
+  }
+
+  .cancel-btn,
+  .save-product-btn {
+    width: 100%;
+  }
+}
+.image-preview {
+  margin-top: 15px;
+  width: 180px;
+}
+
+.image-preview img {
+  width: 180px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  display: block;
+}
+
+.image-preview p {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #666;
+  word-break: break-all;
+}
