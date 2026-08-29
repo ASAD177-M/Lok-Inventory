@@ -2,8 +2,8 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
-import bcrypt from "bcryptjs"; // Password hash karne ke liye
-import User from "./models/User.js"; // Aapke User model ka correct path (file extension .js zaruri hai)
+import bcrypt from "bcryptjs";
+import User from "./models/User.js";
 
 import saleRoutes from "./routes/saleRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
@@ -51,16 +51,20 @@ const createDefaultAdmin = async () => {
   }
 };
 
+// Dynamic Port setup for Render deployment
+const PORT = process.env.PORT || 4000;
+
+// Connect Database and Start Server
 mongoose
   .connect(process.env.MONGO_URI)
   .then(async () => {
-    console.log("MongoDB connected successfully");
+    console.log("MongoDB Connected Successfully ✅");
 
-    // Connect hone ke turant baad admin check/create hoga
+    // Connect hone ke baad default admin check & create hoga
     await createDefaultAdmin();
 
-    app.listen(4000, () => {
-      console.log("Server running at http://localhost:4000");
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT} 🚀`);
     });
   })
   .catch((error) => {
