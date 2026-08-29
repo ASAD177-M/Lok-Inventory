@@ -12,6 +12,12 @@ function Products() {
   const [category, setCategory] = useState("All");
   const [loading, setLoading] = useState(true);
 
+  // Dynamic Backend Base URL (Vite environment variable ya fallback live Render URL)
+  const API_BASE_URL =
+    import.meta.env.VITE_API_URL ||
+    api.defaults.baseURL ||
+    "https://your-render-backend-url.onrender.com"; // 👈 Apne Render URL se replace kar sakte hain
+
   const categories = [
     "All",
     "Electronics",
@@ -66,6 +72,22 @@ function Products() {
 
     return matchesSearch && matchesCategory;
   });
+
+  // Image Source Generator Helper
+  const getImageUrl = (imagePath) => {
+    if (!imagePath) return "https://placehold.co/300x300?text=No+Image";
+    if (imagePath.startsWith("http")) return imagePath;
+
+    // Ensure leading slash
+    const formattedPath = imagePath.startsWith("/")
+      ? imagePath
+      : `/${imagePath}`;
+
+    // Clean base URL trailing slash
+    const cleanBaseUrl = API_BASE_URL.replace(/\/$/, "");
+
+    return `${cleanBaseUrl}${formattedPath}`;
+  };
 
   return (
     <main className="products-page">
@@ -123,24 +145,20 @@ function Products() {
               filteredProducts.map((product) => (
                 <div className="product-card" key={product._id}>
                   <div className="product-image">
-                    {product.image ? (
-                      <img
-                        src={`http://localhost:4000${product.image}`}
-                        alt={product.name}
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover",
-                        }}
-                        onError={(e) => {
-                          e.target.onerror = null;
-                          e.target.src =
-                            "https://via.placeholder.com/300?text=No+Image";
-                        }}
-                      />
-                    ) : (
-                      <span>📦</span>
-                    )}
+                    <img
+                      src={getImageUrl(product.image)}
+                      alt={product.name}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src =
+                          "https://placehold.co/300x300?text=No+Image";
+                      }}
+                    />
                   </div>
 
                   <div className="product-info">
@@ -180,20 +198,21 @@ function Products() {
                     <div className="card-actions">
                       <button
                         className="edit-card-btn"
-                        onClick={() => navigate(`/edit-product/${product._id}`)}
+                        onClick={() =>
+                          navigate(`/edit-product/${product._id}`)
+                        }
                       >
                         Edit
                       </button>
 
-                     <ProtectedRoute>
-                      <button 
-                        className="delete-card-btn"
-                        onClick={() => handleDelete(product._id)}
-                      >
-                        Delete
-                      </button>
-                     </ProtectedRoute>
-                      
+                      <ProtectedRoute>
+                        <button
+                          className="delete-card-btn"
+                          onClick={() => handleDelete(product._id)}
+                        >
+                          Delete
+                        </button>
+                      </ProtectedRoute>
                     </div>
                   </div>
                 </div>
