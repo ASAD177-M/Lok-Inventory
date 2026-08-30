@@ -6,6 +6,7 @@ header {
   width: 100%;
   background: #ffffff;
   border-bottom: 1px solid #e5e5e5;
+  position: relative;
 }
 
 .header-main {
@@ -13,14 +14,12 @@ header {
   max-width: 1200px;
   margin: 0 auto;
   min-height: 75px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 /* Left side */
-
 .header-left {
   display: flex;
   align-items: center;
@@ -52,7 +51,6 @@ header {
 }
 
 /* Right side */
-
 .header-right {
   display: flex;
   align-items: center;
@@ -63,8 +61,7 @@ header {
   text-decoration: none;
 }
 
-/* Signup */
-
+/* Buttons */
 .signup-btn {
   padding: 10px 18px;
   border: 1px solid #111;
@@ -72,9 +69,9 @@ header {
   color: #111;
   font-size: 15px;
   font-weight: 500;
+  background: transparent;
+  cursor: pointer;
 }
-
-/* Login */
 
 .login-btn {
   padding: 10px 20px;
@@ -83,6 +80,8 @@ header {
   border-radius: 7px;
   font-size: 15px;
   font-weight: 500;
+  border: none;
+  cursor: pointer;
 }
 
 .signup-btn:hover {
@@ -92,6 +91,67 @@ header {
 .login-btn:hover {
   background: #333;
 }
-button.login-btn{
+
+/* Mobile Hamburger Button (Hidden by default on Desktop) */
+.hamburger-btn {
+  display: none;
+  background: none;
   border: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #111;
+}
+
+/* ===========================================
+   RESPONSIVE MEDIA QUERIES (Mobile & Tablet)
+   =========================================== */
+@media (max-width: 768px) {
+  .hamburger-btn {
+    display: block; /* Mobile par toggle icon dikhega */
+  }
+
+  /* Navigation Links Wrapper */
+  .header-left {
+    gap: 0;
+  }
+
+  .header-nav {
+    display: none; /* Mobile par hidden rahega jab tak toggle active na ho */
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    flex-direction: column;
+    padding: 20px 0;
+    gap: 20px;
+    border-bottom: 1px solid #e5e5e5;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+  }
+
+  /* Hamburger Toggle Active State */
+  .header-nav.active {
+    display: flex;
+  }
+
+  .header-right {
+    gap: 8px;
+  }
+
+  .signup-btn, .login-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 20px;
+  }
+
+  .signup-btn, .login-btn {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
 }
